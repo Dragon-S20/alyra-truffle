@@ -12,15 +12,15 @@ contract Calculator {
     Divisor private _divisorContract;
 
     constructor(
-        address _adderContract,
+        /*address _adderContract,
         address _suberContract,
         address _multiplierContract,
-        address _divisorContract
+        address _divisorContract*/
     ) public {
-        _adderContract = address(Adder(_adderContract));
-        _suberContract = address(Suber(_suberContract));
-        _multiplierContract = address(Multiplier(_multiplierContract));
-        _divisorContract = address(Divisor(_divisorContract));
+        _adderContract = Adder(_adderContract);
+        _suberContract = Suber(_suberContract);
+        _multiplierContract = Multiplier(_multiplierContract);
+        _divisorContract = Divisor(_divisorContract);
     }
 
     function add(uint256 nb1, uint256 nb2) public view returns (uint256) {
